@@ -27,11 +27,11 @@
 
     <name>Kaa Node</name>
     <url>http://kaaproject.org</url>
-    
+
     <repositories>
         <repository>
-            <id>twttr.com</id>
-            <url>http://maven.twttr.com</url>
+            <id>oschina</id>
+            <url>http://maven.oschina.net/content/groups/public/</url>
         </repository>
     </repositories>
 
@@ -112,11 +112,11 @@
         <dependency>
             <groupId>org.kaaproject.kaa.server.common</groupId>
             <artifactId>verifier-shared</artifactId>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.kaaproject.kaa.common</groupId>
             <artifactId>core</artifactId>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.kaaproject.kaa.client</groupId>
             <artifactId>client-java-core</artifactId>
@@ -156,12 +156,12 @@
             <artifactId>core</artifactId>
             <type>test-jar</type>
             <scope>test</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.kaaproject.kaa.server.common</groupId>
             <artifactId>admin-rest-client</artifactId>
             <scope>test</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -198,7 +198,7 @@
             <groupId>org.codehaus.janino</groupId>
             <artifactId>janino</artifactId>
             <version>2.6.1</version>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jul-to-slf4j</artifactId>
@@ -263,7 +263,7 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <scope>test</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
@@ -285,12 +285,12 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <scope>test</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
             <scope>test</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-test</artifactId>
@@ -335,7 +335,7 @@
             <groupId>org.kaaproject.kaa.server.verifiers</groupId>
             <artifactId>twitter-verifier</artifactId>
             <scope>runtime</scope>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-servlet</artifactId>
@@ -393,11 +393,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>net.iharder</groupId>
             <artifactId>base64</artifactId>
-        </dependency>        
+        </dependency>
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
@@ -433,8 +433,8 @@
             <groupId>org.kaaproject.avro-ui</groupId>
             <artifactId>converter</artifactId>
             <version>${avro-ui.version}</version>
-        </dependency>        
-        
+        </dependency>
+
         <!-- Embedded Jetty server -->
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
@@ -448,7 +448,7 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-annotations</artifactId>
         </dependency>
-        
+
     </dependencies>
 
     <build>
@@ -474,8 +474,8 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>        
-            
+            </plugin>
+
             <!-- Gwt webapp configuration -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -533,8 +533,8 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>            
-            
+            </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
@@ -558,7 +558,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>            
+            </plugin>
             <plugin>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>2.7</version>
@@ -580,14 +580,14 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>                          
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <configuration>
                     <excludes>
                         <exclude>**/logback.xml</exclude>
-                    </excludes> 
+                    </excludes>
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
@@ -596,7 +596,7 @@
                         </manifest>
                     </archive>
                 </configuration>
-            </plugin>          
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -610,14 +610,14 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/classes/admin-web</outputDirectory>
-                            <resources>          
+                            <resources>
                                 <resource>
                                     <directory>src/main/admin-web</directory>
                                     <filtering>false</filtering>
                                 </resource>
-                            </resources>      
+                            </resources>
                         </configuration>
-                    </execution>      
+                    </execution>
                     <execution>
                         <id>copy-conf</id>
                         <phase>process-resources</phase>
@@ -626,7 +626,7 @@
                         </goals>
                         <configuration>
                             <outputDirectory>${project.build.directory}/conf</outputDirectory>
-                            <resources>          
+                            <resources>
                                 <resource>
                                     <directory>src/main/resources</directory>
                                     <filtering>false</filtering>
@@ -650,9 +650,9 @@
                                     <includes>
                                         <include>common-dao-cassandra-context.xml</include>
                                         <include>common-dao-cassandra.properties</include>
-                                        <include>cassandra.cql</include>                                        
+                                        <include>cassandra.cql</include>
                                     </includes>
-                                </resource>           
+                                </resource>
                                 <resource>
                                     <directory>../common/nosql/mongo-dao/src/main/resources</directory>
                                     <filtering>false</filtering>
@@ -660,7 +660,7 @@
                                         <include>common-dao-mongodb-context.xml</include>
                                         <include>common-dao-mongodb.properties</include>
                                     </includes>
-                                </resource>                      
+                                </resource>
                                 <resource>
                                     <directory>../../common/endpoint-shared/src/main/avro</directory>
                                     <filtering>false</filtering>
@@ -669,8 +669,8 @@
                                         <include>default_configuration_schema.avsc</include>
                                         <include>default_notification_schema.avsc</include>
                                     </includes>
-                                </resource>                                                               
-                            </resources>      
+                                </resource>
+                            </resources>
                         </configuration>
                     </execution>
                     <execution>
@@ -731,7 +731,7 @@
                         <targetPath>${project.build.directory}</targetPath>
                     </systemPropertyVariables>
                 </configuration>
-            </plugin>            
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -1156,7 +1156,7 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>    
+        </profile>
         <profile>
             <id>jenkins</id>
             <build>
@@ -1172,7 +1172,7 @@
                                 <targetPath>${project.build.directory}</targetPath>
                             </systemPropertyVariables>
                         </configuration>
-                    </plugin>            
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
@@ -1362,6 +1362,6 @@
                     <scope>runtime</scope>
                 </dependency>
             </dependencies>
-        </profile>        
+        </profile>
     </profiles>
 </project>
